@@ -1,0 +1,82 @@
+<!--<mat-card class="example-card" >-->
+  <!--<mat-card-header>-->
+    <!--<mat-card-title></mat-card-title>-->
+  <!--</mat-card-header>-->
+  <!--<mat-card-content>-->
+<img src="../../assets/ghanatechlab.png" class="center" height="340" width="340"/>
+<h1 class="text-center">National Mobile App Development Training</h1>
+<hr>
+<div style="margin: 2% 20% 2% 20%">
+    <h2 style="text-align: center">Personal Information</h2>
+    <!--<hr>-->
+    <form style="margin-top:5%" class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr >
+          <td>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Full name" [(ngModel)]="fullname" name="fullname" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+            <input matInput type="email" placeholder="Email" [(ngModel)]="email"
+            name="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Phone Number" type="tel" [(ngModel)]="phone" name="phone" required>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Location/Where do you Live?" [(ngModel)]="location" type="text" name="location" required>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>
+            <mat-radio-group >
+              <p style="margin-left: 2%">Gender</p>
+              <mat-radio-button style="margin-left: 2%" (click)="setGender('male')" name="male" [value]="male">Male</mat-radio-button>
+              <mat-radio-button style="margin-left: 20%"  (click)="setGender('female')" name="female" [value]="female">Female</mat-radio-button>
+            </mat-radio-group>
+          </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field style="margin-top: 4%" class="example-full-width">
+                    <input matInput [matDatepicker]="picker" name="dob" [(ngModel)]="dob" placeholder="Date Of Birth">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-select  placeholder="National ID" [(ngModel)]="idtype" name="idtype">
+                      <mat-option *ngFor="let id of nationalIdsData" (onSelectionChange)="setNationalID(id.type)" [value]="id.type">
+                        {{id.type}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Number on Chosen ID" [(ngModel)]="id" name="id" required>
+                    </mat-form-field>
+            </td>
+          </tr>
+    </table>
+    </form>
+  <!--</mat-card-content>-->
+  <!--<mat-card-actions>-->
+    <button style="margin-left: 45%; width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="GoToNext()" color="primary">Next</button>
+  <!--</mat-card-actions>-->
+<!--</mat-card>-->
+</div>

@@ -1,0 +1,87 @@
+<!--<mat-card class="example-card" >-->
+  <!--<mat-card-header>-->
+    <!--<mat-card-title></mat-card-title>-->
+  <!--</mat-card-header>-->
+  <!--<mat-card-content>-->
+<img src="../../assets/ghanatechlab.png" class="center" height="340" width="340"/>
+<h1 class="text-center">National Mobile App Development Training</h1>
+<hr>
+<div style="margin: 2% 20% 2% 20%">
+    <h4 class="text-center">Other Information</h4>
+    <form style="margin-top:5%" class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-checkbox class="example-full-width" (click)="changeEmployment()"  [(ngModel)]="employed" style="font-weight: bolder"> Are You Currently Employed? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
+          </td>
+        </tr>
+        <tr *ngIf="employed">
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="What is your current role?" [(ngModel)]="currentRole" type="text" name="course" required>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <textarea [(ngModel)]="motivation" matInput placeholder="Why are you applying for this training program? Describe what motivated you to apply"></textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-checkbox (click)="enrolledCheck()" [(ngModel)]="enrolled" class="example-full-width" style="font-weight: bolder"> Are you currently enrolled in any of Ghana Tech Lab’s programs? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-checkbox (click)="fullParticipation()" [(ngModel)]="fullparticipation" class="example-full-width" style="font-weight: bolder"> Can you confirm your full participation and commitment for the one month training program if selected? <br>
+              <span style="font-style: italic; color: red; padding-left: 1%">Tick checkbox if yes</span></mat-checkbox>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-checkbox (click)="readyToCommit()" [(ngModel)]="commit" class="example-full-width" style="font-weight: bolder"> After the one-month training program, successful trainees will be
+              enrolled in our flagship 2-months
+              <p>residential incubation program in Accra. Are you ready to commit fully to this incubation program?</p>
+               <span style="font-style: italic; color: red; padding-left: 1%">Tick checkbox if yes</span></mat-checkbox>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-checkbox (click)="internshipOpportunity()" [(ngModel)]="internOpportunity" class="example-full-width" style="font-weight: bolder"> Participants will be given internship opportunities after the training
+              program.
+              <p>Do you want to be considered for an internship opportunity?</p>
+              <span style="font-style: italic; color: red; padding-left: 1%">Tick checkbox if yes</span></mat-checkbox>
+          </td>
+        </tr>
+        <tr>
+          <td><p style="font-weight: bolder; margin-left: 6%">How did you hear about this training program?</p></td>
+        </tr>
+        <tr class="example-full-width" >
+          <td >
+            <mat-radio-group >
+              <mat-radio-button style="margin-left: 6%" (click)="heardThrough('website')" value="website">Our website</mat-radio-button>
+              <mat-radio-button style="padding-left: 1%; padding-right: 1%" (click)="heardThrough('social media')" value="social media">Social Media</mat-radio-button>
+              <mat-radio-button style="padding-left: 1%; padding-right: 1%" (click)="heardThrough('friends')" value="friends">Friends</mat-radio-button>
+              <mat-radio-button style="padding-left: 1%; padding-right: 1%" (click)="heardThrough('search engine')"  value="search engine">Search Engine</mat-radio-button>
+              <mat-radio-button style="padding-left: 1%; padding-right: 1%" (click)="heardThrough('other')" value="other">Other</mat-radio-button>
+            </mat-radio-group>
+          </td>
+        </tr>
+      </table>
+    </form>
+  <!--</mat-card-content>-->
+  <!--<mat-card-actions>-->
+    <table style="margin-left: 40%">
+      <tr>
+        <td>
+          <button style="width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="GoBack()" color="warn">Back</button>
+        </td>
+        <td >
+          <button style="width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="Submit()" color="primary">SUBMIT</button>
+        </td>
+      </tr>
+    </table>
+</div>
+  <!--</mat-card-actions>-->
+<!--</mat-card>-->

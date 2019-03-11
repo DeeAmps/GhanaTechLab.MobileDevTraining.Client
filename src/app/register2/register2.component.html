@@ -1,0 +1,78 @@
+<!--<mat-card class="example-card">-->
+    <!--<mat-card-header>-->
+      <!--<mat-card-title></mat-card-title>-->
+    <!--</mat-card-header>-->
+    <!--<mat-card-content>-->
+<img src="../../assets/ghanatechlab.png" class="center" height="340" width="340"/>
+<h1 class="text-center">National Mobile App Development Training</h1>
+<hr>
+<div style="margin: 2% 20% 2% 20%">
+      <h4 class="text-center">Education / Skills</h4>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="What is your highest level of education?">
+                  <mat-option *ngFor="let id of educationalLevels" (onSelectionChange)="setEducationLevel(id.level)" value="educationalLevels?.level">
+                    {{id.level}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="What kind of institution did you attend?">
+                  <mat-option *ngFor="let id of instituitions" (onSelectionChange)="setInstituitionLevel(id.level)" value="instituitions?.level">
+                    {{id.level}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="What course did you study?" [(ngModel)]="courseStudied" type="text" name="course" required>
+            </mat-form-field></td>
+          </tr>
+          <tr>
+            <td>
+              <mat-checkbox (change)="entrepreneurialTraining()"  [checked]="entrepreneurial" name="entrepreneurial" class="example-full-width" style="font-weight: bolder"> Do you have any entrepreneurial training? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-checkbox class="example-full-width" (click)="changeProgrammingKnowledge()"  [checked]="programmingKnowledge" name="programmingKnowledge" style="font-weight: bolder"> Do you have any programming/coding knowledge? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
+            </td>
+          </tr>
+          <tr *ngIf="programmingKnowledge == true">
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="What languages Do you know? (seperate multiple with commas)" [(ngModel)]="languages" name="languages" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr  *ngIf="programmingKnowledge == true">
+            <td style="padding-left: 2%">
+              <span style="font-weight: bolder">Rate your level of skill/knowledge in coding </span><mat-slider thumbLabel [(ngModel)]="programmingRate" name="programmingRate" tickInterval="1" style="margin-left: 2%;" min="1" max="10" step="1"></mat-slider>
+            </td>
+          </tr>
+      </table>
+      </form>
+    <!--</mat-card-content>-->
+    <!--<mat-card-actions>-->
+     <table style="margin-left: 40%">
+       <tr>
+         <td>
+           <button style="width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="GoBack()" color="warn">Back</button>
+         </td>
+         <td >
+           <button style="width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="GoToNext()" color="primary">Next</button>
+         </td>
+       </tr>
+     </table>
+</div>
+    <!--</mat-card-actions>-->
+  <!--</mat-card>-->
