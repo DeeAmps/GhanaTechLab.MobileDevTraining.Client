@@ -70,13 +70,13 @@ export class Register3Component implements OnInit {
 
   checkInput(val) {
     if (val === undefined || val === '') {
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 
   Submit() {
-    if (!this.checkInput(this.motivation)) {
+    if (this.motivation == undefined || this.motivation == null || this.motivation == '') {
       return Swal.fire({
         title: '',
         text: 'Please share your motivation with us!',
@@ -88,6 +88,14 @@ export class Register3Component implements OnInit {
       return Swal.fire({
         title: '',
         text: 'Please tell us your current Job Role!',
+        type: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
+    if (this.heardBy == undefined || this.heardBy == null || this.heardBy == ''){
+      return Swal.fire({
+        title: '',
+        text: 'Please tell us how you heard about us!',
         type: 'error',
         confirmButtonText: 'OK'
       });
@@ -128,7 +136,10 @@ export class Register3Component implements OnInit {
           text: 'Your application will be reviewed. Best of Luck',
           type: 'success',
           confirmButtonText: 'OK'
-        });
+        })
+          .then((result) => {
+            this.router.navigate(['']);
+          });
       } else {
         return Swal.fire({
           title: 'Error Sending Application',

@@ -4,7 +4,7 @@
     <!--</mat-card-header>-->
     <!--<mat-card-content>-->
 <img src="../../assets/ghanatechlab.png" class="center" height="340" width="340"/>
-<h1 class="text-center">National Mobile App Development Training</h1>
+<h2 style="font-weight: bolder; font-style: italic" class="text-center">National Mobile App Development Training</h2>
 <hr>
 <div style="margin: 2% 20% 2% 20%">
       <h4 class="text-center">Education / Skills</h4>
@@ -39,12 +39,12 @@
           </tr>
           <tr>
             <td>
-              <mat-checkbox (change)="entrepreneurialTraining()"  [checked]="entrepreneurial" name="entrepreneurial" class="example-full-width" style="font-weight: bolder"> Do you have any entrepreneurial training? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
+              <mat-checkbox (change)="entrepreneurialTraining()"   name="entrepreneurial" class="example-full-width" style="font-weight: bolder"> Do you have any entrepreneurial training? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
             </td>
           </tr>
           <tr>
             <td>
-              <mat-checkbox class="example-full-width" (click)="changeProgrammingKnowledge()"  [checked]="programmingKnowledge" name="programmingKnowledge" style="font-weight: bolder"> Do you have any programming/coding knowledge? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
+              <mat-checkbox class="example-full-width" (click)="changeProgrammingKnowledge()"  name="programmingKnowledge" style="font-weight: bolder"> Do you have any programming/coding knowledge? <span style="font-style: italic; color: red; padding-left: 2%">Tick checkbox if yes</span></mat-checkbox>
             </td>
           </tr>
           <tr *ngIf="programmingKnowledge == true">
@@ -66,10 +66,10 @@
      <table style="margin-left: 40%">
        <tr>
          <td>
-           <button style="width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="GoBack()" color="warn">Back</button>
+           <button style="width: 90px; height: 40px; font-size: 25px" mat-raised-button (click)="GoBack()" color="warn">Back</button>
          </td>
          <td >
-           <button style="width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="GoToNext()" color="primary">Next</button>
+           <button style="width: 90px; height: 40px; font-size: 25px" mat-raised-button (click)="GoToNext()" color="primary">Next</button>
          </td>
        </tr>
      </table>

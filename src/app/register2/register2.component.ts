@@ -21,7 +21,7 @@ export class Register2Component implements OnInit {
   courseStudied: any;
   languages: any;
   programmingRate = 0;
-  entrepreneurial = false;
+  entrepreneurial =  false;
   programmingKnowledge = false;
   constructor(private api: ApiCallsService, private ngxService: NgxUiLoaderService,  private router: Router) { }
 

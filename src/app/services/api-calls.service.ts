@@ -16,6 +16,11 @@ export class ApiCallsService {
     return this.http.get(`${this.apiUrl}/instituitionLevel/getAll`);
   }
 
+  getRegions() {
+    return this.http.get(`${this.apiUrl}/regions/getAll`);
+  }
+
+
   getEducationLevels() {
     return this.http.get(`${this.apiUrl}/educationalLevel/getAll`);
   }

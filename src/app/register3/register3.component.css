@@ -15,6 +15,10 @@
   margin-top: 1% !important;
 }
 
+.mat-checkbox-label{
+  padding-top: 30px !important;
+}
+
 .center{
   display: block;
   margin-left: auto;

@@ -16,6 +16,8 @@ import { sha256 } from 'js-sha256';
 })
 export class RegisterComponent implements OnInit {
   nationalIdsData: any;
+  regions: any;
+  region: any
   fullname: any;
   email: any;
   phone: any;
@@ -31,7 +33,11 @@ export class RegisterComponent implements OnInit {
     this.ngxService.start();
     this.api.getNationalIDs().subscribe(n => {
       this.nationalIdsData = n;
-      this.ngxService.stop();
+      this.api.getRegions().subscribe(r => {
+        this.regions = r;
+        this.ngxService.stop();
+      });
+
     });
     if (localStorage.getItem('PERSONAL_INFO') != undefined || localStorage.getItem('PERSONAL_INFO') != null) {
       const getObj = JSON.parse(localStorage.getItem('PERSONAL_INFO'));
@@ -50,6 +56,10 @@ export class RegisterComponent implements OnInit {
     this.idtype = type;
   }
 
+  setRegion(name) {
+    this.region = name;
+  }
+
 
   setGender(val) {
     this.gender = val;
@@ -65,7 +75,7 @@ export class RegisterComponent implements OnInit {
   GoToNext() {
     localStorage.removeItem('PERSONAL_INFO');
     if ( this.checkInput(this.gender) ||  this.checkInput(this.fullname) || this.checkInput(this.idtype)
-      ||  this.checkInput(this.nationalIdsData) || this.checkInput(this.email) || this.checkInput(this.dob)
+      || this.checkInput(this.region) || this.checkInput(this.email) || this.checkInput(this.dob)
       || this.checkInput(this.phone) || this.checkInput(location) || this.checkInput(this.id)) {
       return Swal.fire({
         title: '',
@@ -87,6 +97,7 @@ export class RegisterComponent implements OnInit {
         phone: this.phone,
         location: this.location,
         dob: this.dob,
+        region: this.region,
         id: this.id,
         idt: this.idtype,
         gender: this.gender,

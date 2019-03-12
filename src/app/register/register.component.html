@@ -4,10 +4,10 @@
   <!--</mat-card-header>-->
   <!--<mat-card-content>-->
 <img src="../../assets/ghanatechlab.png" class="center" height="340" width="340"/>
-<h1 class="text-center">National Mobile App Development Training</h1>
+<h2 style="font-weight: bolder; font-style: italic" class="text-center">National Mobile App Development Training</h2>
 <hr>
 <div style="margin: 2% 20% 2% 20%">
-    <h2 style="text-align: center">Personal Information</h2>
+    <h3 style="text-align: center">Personal Information</h3>
     <!--<hr>-->
     <form style="margin-top:5%" class="example-form">
       <table class="example-full-width" cellspacing="0">
@@ -35,6 +35,17 @@
           <td><mat-form-field class="example-full-width">
             <input matInput placeholder="Location/Where do you Live?" [(ngModel)]="location" type="text" name="location" required>
           </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select  placeholder="Region Of Location" [(ngModel)]="region" name="region">
+                <mat-option *ngFor="let id of regions" (onSelectionChange)="setRegion(id.name)" [value]="id.name">
+                  {{id.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
         </tr>
         <tr>
           <td>
@@ -76,7 +87,7 @@
     </form>
   <!--</mat-card-content>-->
   <!--<mat-card-actions>-->
-    <button style="margin-left: 45%; width: 120px; height: 50px; font-size: 25px" mat-raised-button (click)="GoToNext()" color="primary">Next</button>
+    <button style="margin-left: 45%; width: 90px; height: 40px; font-size: 25px" mat-raised-button (click)="GoToNext()" color="primary">Next</button>
   <!--</mat-card-actions>-->
 <!--</mat-card>-->
 </div>
